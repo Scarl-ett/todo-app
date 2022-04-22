@@ -5,6 +5,7 @@ import {
 } from 'react-icons/md';
 import cn from 'classnames';
 import './TodoListItem.scss';
+import React from 'react';
 
 const TodoListItem = ({todo, onRemove, onToggle}) => {
   const {id, text, checked} = todo; 
@@ -22,4 +23,5 @@ const TodoListItem = ({todo, onRemove, onToggle}) => {
   );
 }
 
-export default TodoListItem;
+export default React.memo(TodoListItem);
+// React.memo를 사용하면 todo, onRemove, onToggle이 바뀌지 않으면 리렌더링을 하지 않는다.
